@@ -1,0 +1,60 @@
+#heading {
+    width: 100%;
+    text-align: center;
+}
+
+#control {
+    display: inline-block;
+    background-color: lightgreen;
+    width: 100%;
+}
+
+.control1, .values {
+    width: 30%;
+    margin-left: 10%;
+    float: left;
+}
+
+.values1, .values2 {
+    width: 50%;
+    float: left;
+}
+
+.values1:span {
+    width: 10%;
+}
+
+input[type=number] {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 70%;
+  }
+
+.tableclass {
+    border: 1px solid rgb(1, 1, 8);
+    height: 80vh;
+    width: 80vw;
+    margin-top: 15px;
+    margin-left: 8vw;
+    padding: 5px;
+    background-color: lightgray;
+    border-spacing: 0;
+}
+
+td {
+    margin: 0;
+    padding: 0;
+    border-spacing: 0;
+    /* min-height: 15px; */
+    border-left: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+    background-color: white;
+}
+
+tr {
+    margin: 0;
+    padding: 0;
+    max-width: 90%;
+}

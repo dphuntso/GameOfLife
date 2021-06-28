@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script src="index.js"></script>
+        <script src="board.js"></script>
+    </head>
+    <body>
+        <div id="heading">
+            <h1>Conway's game of life</h1>
+        </div>
+        <div id="control">
+            <div class="values">
+                <div class="values1">
+                    <span>
+                        row:
+                    </span>
+                    <input type="number" value="250">
+                </div>
+                <div class="values2">
+                    <span>
+                        column:
+                    </span>
+                    <input type="number" value="350">
+                </div>
+            </div>
+            <div class="control1">
+                <button onclick="next()">next</button>
+            </div>
+        </div>
+        <table id="table">
+        </table>
+
+        <script>
+            var ROW = 250;
+            var COLUMN = 350;
+            var DEAD = 0;
+            var ALIVE = 1;
+
+            var rules = setRules(ROW, COLUMN, DEAD, ALIVE);
+
+            createTable(rules);
+            let table = document.getElementById("table");
+            table.className = "tableclass";
+            let currentBoard = createBoard(false, rules);
+            let nextBoard = createBoard(true, rules);
+            
+            function drawBoard(board) {
+                var table = document.getElementById("table");
+                for (var i = 0, row; row = table.rows[i]; i++) {
+                    //iterate through rows
+                    //rows would be accessed using the "row" variable assigned in the for loop
+                    for (var j = 0, col; col = row.cells[j]; j++) {
+                        if (board[i][j] == DEAD) {
+                            row.cells[j].style.backgroundColor = "white";
+                        } else {
+                            row.cells[j].style.backgroundColor = "black";
+                        }
+                        //iterate through columns
+                        //columns would be accessed using the "col" variable assigned in the for loop
+                    }  
+                }
+            }
+            drawBoard(currentBoard, rules);
+
+            function next() {
+                processBoard(currentBoard, nextBoard, rules);
+                drawBoard(nextBoard, rules);
+                let temp = currentBoard;
+                currentBoard = nextBoard;
+                nextBoard = temp;
+            }
+ 
+        </script>
+    </body>
+</html>
