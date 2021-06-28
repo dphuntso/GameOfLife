@@ -5,7 +5,7 @@ function test() {
     printBoard(board);
 }
 
-function donothing(time) {
+function waitTime(time) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve();
@@ -21,7 +21,7 @@ async function startGame(rounds) {
     printBoard(currentBoard);
     while (rounds-- != 0) {
         processBoard(currentBoard, nextBoard);
-        // await donothing(1500);
+        // await waitTime(1500);
         printBoard(nextBoard);
         let temp = currentBoard;
         currentBoard = nextBoard;
